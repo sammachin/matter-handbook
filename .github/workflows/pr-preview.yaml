@@ -31,9 +31,9 @@ jobs:
           && sudo dpkg -i ${{ runner.temp }}/hugo.deb          
       - name: Install Dart Sass
         run: |
-              wget -O /tmp/dart-sass-1.77.8-linux-x64.tar.gz https://github.com/sass/dart-sass/releases/download/1.77.8/dart-sass-1.77.8-linux-x64.tar.gz
-              tar -xzf /tmp/dart-sass-1.77.8-linux-x64.tar.gz --directory /tmp
-              mv /tmp/dart-sass/* /usr/local/bin/
+              sudo wget -O /usr/local/src/dart-sass-1.77.8-linux-x64.tar.gz https://github.com/sass/dart-sass/releases/download/1.77.8/dart-sass-1.77.8-linux-x64.tar.gz
+              sudo tar -xzf /usr/local/src/dart-sass-1.77.8-linux-x64.tar.gz --directory /usr/local/src
+              sudo mv /usr/local/src/dart-sass/* /usr/local/bin/
       - name: Checkout
         uses: actions/checkout@v3
         with:
