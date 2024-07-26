@@ -40,19 +40,19 @@ jobs:
           ref: ${{ github.event.pull_request.head.sha }}
           submodules: recursive
           fetch-depth: 0
+      - name: Make SDK Dir
+        run: mkdir sdk
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v3
         with:
           repository: sammachin/connectedhomeip
           fetch-depth: 0
-          path: /sdk/
+          path: sdk/
       - name: Copy SDK Docs
         run: | 
               pwd
-              cp /sdk/docs/* ./content/SDK  
-      - name: Setup Pages
-        id: pages
-        uses: actions/configure-pages@v3
+              rsync -av sdk/docs/ ./content/SDK/
+              rm -rf ./sdk/*
       - name: Install Node.js dependencies
         run: "[[ -f package-lock.json || -f npm-shrinkwrap.json ]] && npm ci || true"
       - name: Build with Hugo
