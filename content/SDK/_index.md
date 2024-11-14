@@ -10,6 +10,8 @@ pre = "<b>4. </b>"
 The Matter Software Development Kit is a collection of tools to facilitate building  Matter devices and control applications.
 The SDK comprises of several different components to guide the development process.
 
+Detailed documentation for the SDK can be found [here](https://project-chip.github.io/connectedhomeip-doc/index.html)
+
 ### ZAP
 
 The ZAP tool is a GUI tool that is used to generate a .zap file which describes the endpoint composition of your device, and the clusters that are on it along with their attributes, commands, features, etc.
