@@ -1,0 +1,822 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Interaction Model &#8212; matter-handbook  documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!-- 
+    this give us a css class that will be invisible only if js is disabled 
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=a3416100" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../../_static/scripts/fontawesome.js?digest=26a4bc78f4c0ddb94549"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549" />
+
+    <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'content/HowItWorks/InteractionModel';</script>
+    <link rel="icon" href="../../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Discovery" href="Discovery.html" />
+    <link rel="prev" title="Connectivity Transports" href="ConnectivityTransports.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/logo.png" class="logo__image only-light" alt="matter-handbook  documentation - Home"/>
+    <img src="../../_static/logo.png" class="logo__image only-dark pst-js-only" alt="matter-handbook  documentation - Home"/>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Contents</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="index.html">How It Works</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="WhatIsMatter.html">What is Matter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Roles.html">Roles</a></li>
+<li class="toctree-l2"><a class="reference internal" href="DeviceTypes.html">Supported Device Types</a></li>
+<li class="toctree-l2"><a class="reference internal" href="DataModel.html">The Device Data Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ConnectivityTransports.html">Connectivity Transports</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Interaction Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Discovery.html">Discovery</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Fabric.html">Discovery</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Commisioning.html">Commissioning</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Attestation.html">Attestation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Security.html">Security &amp; Privacy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Thread.html">Thread</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Alliance/index.html">The Connectivity Standards Alliance</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Alliance/howwework.html">How We Work</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Alliance/membership.html">Membership</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Alliance/resources.html">Resources</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Alliance/whatwedo.html">What We Do</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Specification/index.html">The Matter Specifications</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="simple">
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../SDK/index.html">SDK</a></li>
+
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Guides/index.html">Guides</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Guides/DistributedComplianceLedger.html">Distributed Compliance Ledger (DCL)</a></li>
+</ul>
+</details></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+<a href="https://github.com/project-chip/matter-handbook" target="_blank"
+   class="btn btn-sm btn-source-repository-button"
+   title="Source repository"
+   data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+
+</a>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/content/HowItWorks/InteractionModel.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Interaction Model</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#concepts">Concepts</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#initiators-and-targets">Initiators and Targets</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#groups">Groups</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#paths">Paths</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#timed-and-untimed">Timed and Untimed</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#the-intercept-attack">The Intercept Attack</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sdk-abstractions">SDK abstractions</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#read-transactions">Read Transactions</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#read-transaction">Read Transaction</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#read-request-action">Read Request Action</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#report-data-action">Report Data Action</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#status-response-action">Status Response Action</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#read-restrictions">Read Restrictions</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#subscription-transaction">Subscription Transaction</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#subscribe-request-action">Subscribe Request Action</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#subscribe-response-action">Subscribe Response Action</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#subscribe-restrictions">Subscribe Restrictions</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#write-transactions">Write Transactions</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#untimed-write-transaction">Untimed Write Transaction</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#write-request-action">Write Request Action</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#write-response-action">Write Response Action</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#untimed-write-restrictions">Untimed Write Restrictions</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#timed-write-transaction">Timed Write Transaction</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#timed-request-action">Timed request action</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Write Request Action</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Write Response Action</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#timed-write-restrictions">Timed Write Restrictions</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#invoke-transactions">Invoke Transactions</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#untimed-invoke-transaction">Untimed Invoke Transaction</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#invoke-request-action">Invoke Request Action</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#invoke-response-action">Invoke Response Action</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#untimed-invoke-restrictions">Untimed Invoke Restrictions</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#timed-invoke-transactions">Timed Invoke Transactions</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Timed Request Action</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Invoke Request Action</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">Invoke Response Action</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#timed-invoke-restrictions">Timed Invoke Restrictions</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="interaction-model">
+<h1>Interaction Model<a class="headerlink" href="#interaction-model" title="Link to this heading">#</a></h1>
+<section id="concepts">
+<h2>Concepts<a class="headerlink" href="#concepts" title="Link to this heading">#</a></h2>
+<p>The Data Model (DM) of a Node isn’t relevant if we can’t perform operations on them. The Interaction Model (IM), defines a Node’s DM relationship with the DM of other Nodes: a common language for communication between DMs.</p>
+<p>Nodes interact with each other by:</p>
+<ul class="simple">
+<li><p>Reading and Subscribing to Attributes and Events</p></li>
+<li><p>Writing to Attributes</p></li>
+<li><p>Invoking Commands.</p></li>
+</ul>
+<p>Whenever a Node establishes an encrypted communication sequence with another Node, they constitute an Interaction relationship. Interactions may be composed of one or more Transactions, and Transactions are composed of one or more of Actions which can be understood as IM-level messages between Nodes.</p>
+<p><img alt="Hierarchy of Interaction Model" src="primer-im-hierarchy.png" /></p>
+<p>Several Actions are supported on Transactions, such as a Read Request Action that requests an Attribute or Event from another Node, or its response, the Report Data Action, which carries the information back from the server to the client.</p>
+<section id="initiators-and-targets">
+<h3>Initiators and Targets<a class="headerlink" href="#initiators-and-targets" title="Link to this heading">#</a></h3>
+<p>The Node that initiates a Transaction is the Initiator, while the Node that responds is the Target. Typically the Initiator is a Client Cluster and the Target is a Server Cluster. However, there are exceptions to this pattern, such as in the Subscription Interactions analyzed further down in this section.</p>
+</section>
+<section id="groups">
+<h3>Groups<a class="headerlink" href="#groups" title="Link to this heading">#</a></h3>
+<p>Nodes and Endpoints in Matter may belong to a Group. A Group is a mechanism for addressing and sending messages to several Nodes in the same Action simultaneously. All Nodes in a Group share the same Group ID, a 16-bit integer.</p>
+<p>To accomplish group-level communication (Groupcast), Matter leverages IPv6 Multicast messages, and all Group members have the same Multicast address.</p>
+</section>
+<section id="paths">
+<h3>Paths<a class="headerlink" href="#paths" title="Link to this heading">#</a></h3>
+<p>Whenever we want to interact with an Attribute, Event, or Command, we must specify the Path for this interaction: the location of an Attribute, Event or Command in the Data Model hierarchy of a Node. The caveat is that paths may also use Groups or Wildcard Operators to address several Nodes or Clusters simultaneously, aggregating these Interactions and thus decreasing the number of actions.</p>
+<p>This mechanism is important to enhance the responsiveness of communications. For example, when a user wants to shut down all lights, a voice assistant can establish a single interaction with several lights within a Group instead of a sequence of individual Interactions. If the Initiator creates individual Interactions with each light, it can generate human-perceptible latency in Device responsiveness. This effect causes the multiple Devices to react to a command with visible delays between them. This is often referred to as “popcorn effect”.</p>
+<p>A Path in Matter can be assembled using one of the options below:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">path</span><span class="o">&gt;</span> <span class="o">=</span> <span class="o">&lt;</span><span class="n">node</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">endpoint</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">cluster</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">attribute</span> <span class="o">|</span> <span class="n">event</span> <span class="o">|</span> <span class="n">command</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="n">path</span><span class="o">&gt;</span> <span class="o">=</span> <span class="o">&lt;</span><span class="n">group</span> <span class="n">ID</span><span class="o">&gt;</span>        <span class="o">&lt;</span><span class="n">cluster</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">attribute</span> <span class="o">|</span> <span class="n">event</span> <span class="o">|</span> <span class="n">command</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<p>And within these Path building blocks, <code class="docutils literal notranslate"><span class="pre">endpoint</span></code> and <code class="docutils literal notranslate"><span class="pre">cluster</span></code> may also include Wildcards Operators for selecting more than one Node instance.</p>
+</section>
+<section id="timed-and-untimed">
+<h3>Timed and Untimed<a class="headerlink" href="#timed-and-untimed" title="Link to this heading">#</a></h3>
+<p>There are two ways of performing a Write or Invoke Transaction: Timed and Untimed. Timed Transactions establish a maximum timeout for the Write/Invoke Action to be sent. The purpose of this timeout is to prevent an Intercept Attack on the Transaction. It is especially valid for Devices that gate access to assets, such as garage openers and locks.</p>
+<p>To understand Timed Transactions it’s useful to understand how Intercept Attacks can happen and why Timed Transactions are important.</p>
+<section id="the-intercept-attack">
+<h4>The Intercept Attack<a class="headerlink" href="#the-intercept-attack" title="Link to this heading">#</a></h4>
+<p>An Intercept Attack has the following pattern:</p>
+<ul class="simple">
+<li><p>Alice sends Bob an initial message, such as a Write Request Action.</p></li>
+<li><p>Eve, a man-in-the-middle, intercepts the message and prevents Bob from receiving it, for example through some type of radio jamming.</p></li>
+<li><p>Alice, not receiving a response from Bob, sends a second message.
+Eve intercepts again and prevents Bob from receiving it.</p></li>
+<li><p>Eve sends the first intercepted message to Bob, as if it were coming from Alice.</p></li>
+<li><p>Bob sends the response to Alice (and Eve).</p></li>
+<li><p>Eve holds the second intercepted message for a later replay. Since Bob never received the original second intercepted message from Alice, it will accept it. This message represent a security breach when the message encodes a command such as “open lock”.</p></li>
+</ul>
+<p>To prevent these types of attacks, Timed Actions set a maximum Transaction timeout at the start of the Transaction. Even if Eve manages to execute the first six steps of the attack vector, it will not be able to replay the message on step 7 due to an expired timeout on the Transaction.</p>
+<p>Timed Transactions increase the complexity and number of Actions. Thus they are not recommended for every Transaction, but only the critical operations on Devices that have control over physical or virtual security and privacy assets.</p>
+</section>
+</section>
+<section id="sdk-abstractions">
+<h3>SDK abstractions<a class="headerlink" href="#sdk-abstractions" title="Link to this heading">#</a></h3>
+<p>The sections Read Transactions, Write Transactions, and Invoke Transactions provide a high-level overview of the Interaction Model Actions performed by the SDK.</p>
+<p>The developer creating a product that uses the Matter SDK typically does not perform calls to execute Actions directly; the Actions are abstracted by SDK functions that will encapsulate them into an Interaction. However, understanding IM Actions is important to provide the engineer a good proficiency on the capabilities of Matter, as well as fine control over the SDK implementation.</p>
+</section>
+</section>
+<section id="read-transactions">
+<h2>Read Transactions<a class="headerlink" href="#read-transactions" title="Link to this heading">#</a></h2>
+<section id="read-transaction">
+<h3>Read Transaction<a class="headerlink" href="#read-transaction" title="Link to this heading">#</a></h3>
+<p>One of the first use cases when interacting with Nodes in Matter is the reading of an Attribute from another Node, such as a temperature value from a sensor. In such Interactions, the first Action that must be performed is the Read Request Action.</p>
+</section>
+<section id="read-request-action">
+<h3>Read Request Action<a class="headerlink" href="#read-request-action" title="Link to this heading">#</a></h3>
+<p>Direction: Initiator -&gt; Target</p>
+<p>In this Action the Initiator queries a Target providing:</p>
+<ul class="simple">
+<li><p>Attribute Requests: a list of zero or more of the Target’s Attributes. This list is composed of zero or more Paths to the Target’s requested Attributes.</p></li>
+<li><p>Event Requests: list of zero or more Paths to the Target’s requested Events.
+After the Read Request Action is received by the Target it will assemble a Report Data Action with the requested information.</p></li>
+</ul>
+<p><img alt="Read Transaction" src="primer-im-reading.png" /></p>
+<p>After the Read Request Action is received by the Target it will assemble a Report Data Action with the requested information.</p>
+</section>
+<section id="report-data-action">
+<h3>Report Data Action<a class="headerlink" href="#report-data-action" title="Link to this heading">#</a></h3>
+<p>Direction: Target -&gt; Initiator</p>
+<p>In this Action the Target responds with:</p>
+<ul class="simple">
+<li><p>Attribute Reports: a list of zero or more of the reported Attributes requested in the Read Action Request.</p></li>
+<li><p>Event Reports: a list of zero or more reported Events.</p></li>
+<li><p>Suppress Response: a flag that determines whether the status response to this action should be suppressed.</p></li>
+<li><p>Subscription ID: if this report is part of a subscribing transaction, it must include an integer used to identify the subscription transaction.</p></li>
+</ul>
+</section>
+<section id="status-response-action">
+<h3>Status Response Action<a class="headerlink" href="#status-response-action" title="Link to this heading">#</a></h3>
+<p>Direction: either Target -&gt; Initiator or Initiator -&gt; Target</p>
+<p>Once the Initiator receives the requested data, by default it must generate a Status Response Action. This action is sent from the Initiator, acknowledging the receipt of the reported data. If the flag Suppress Status Response is set, the Initiator must not send the Status Response Action.</p>
+<p>Once the Status Response Action is sent by the Initiator, or a Report Data Action is received by the Initiator with the Suppress Response flag enabled, the read/report query is finished.</p>
+<p>The Status Response Action simply contains a status field that will either acknowledge operation success or present a failure code.</p>
+</section>
+<section id="read-restrictions">
+<h3>Read Restrictions<a class="headerlink" href="#read-restrictions" title="Link to this heading">#</a></h3>
+<p>The Read Request Action and Report Data Action are Unicast-only. Moreover, the Paths of these requests may not target a Group of Nodes.</p>
+<p>The Status Response Action is Unicast-only and can’t be generated as a response to a groupcast.</p>
+</section>
+</section>
+<section id="subscription-transaction">
+<h2>Subscription Transaction<a class="headerlink" href="#subscription-transaction" title="Link to this heading">#</a></h2>
+<section id="subscribe-request-action">
+<h3>Subscribe Request Action<a class="headerlink" href="#subscribe-request-action" title="Link to this heading">#</a></h3>
+<p>Direction: Initiator -&gt; Target</p>
+<p>In addition to a singular Read Request Action, an Initiator may also subscribe to periodic updates of an Attribute or Event. Thus the same Report Data Action can be generated as a result of periodic data updates that follow a Subscription Transaction.</p>
+<p>A Subscription Interaction creates a relationship between two Nodes, in which the Target periodically generates Report Data Actions to the Initiator. The Initiator is the Subscriber and the Target is the Publisher.</p>
+<p><img alt="Subscription Transaction" src="primer-im-subscribing.png" /></p>
+<p>A Subscribe Request Action contains:</p>
+<ul class="simple">
+<li><p>Min Interval Floor: the minimum interval between reports.</p></li>
+<li><p>Max Interval Ceiling: the maximum interval between reports.</p></li>
+<li><p>Attribute Reports: a list of zero or more of the reported Attributes requested in the Read Action Request.</p></li>
+<li><p>Event Reports: a list of zero or more reported Events.</p></li>
+</ul>
+<p>After the Subscribe Request, the Target responds to the Initiator with a Report Data Action containing the first batch of reported data: the Primed Published Data.</p>
+<p>The Initiator then acknowledges the Report Data Action with a Status Response Action sent to the Target. Once the Target receives a Status Response Action reporting no errors, it sends a Subscribe Response Action.</p>
+<p>The Target will subsequently send Report Data Action periodically at the negotiated interval and the Initiator will respond to those Actions until the subscription is lost or cancelled.</p>
+</section>
+<section id="subscribe-response-action">
+<h3>Subscribe Response Action<a class="headerlink" href="#subscribe-response-action" title="Link to this heading">#</a></h3>
+<p>Direction: Target -&gt; Initiator</p>
+<p>This is the last Action on the Subscription Transaction and concludes the process. It includes:</p>
+<ul class="simple">
+<li><p>Subscription ID: a integer that identifies the subscription.</p></li>
+<li><p>Min Interval: the final, determined minimum interval between reports.</p></li>
+<li><p>Max Interval: the final, determined maximum interval between reports.</p></li>
+</ul>
+</section>
+<section id="subscribe-restrictions">
+<h3>Subscribe Restrictions<a class="headerlink" href="#subscribe-restrictions" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>The Subscribe Request Action and the Subscribe Response Action are Unicast-only actions.</p></li>
+<li><p>All Report Data Actions in a Subscription Interaction must have the same Subscription ID.</p></li>
+<li><p>If the Subscriber does not receive a Report Data Action within the maximum negotiated interval between Actions, the subscription will be terminated.</p></li>
+<li><p>As a consequence of the previous rule, the Publisher may terminate a Subscription Interaction by simply stopping sending periodic Report Data Actions.</p></li>
+<li><p>The Subscriber may terminate the Subscription Interaction by responding to a Report Data Action with an INACTIVE_SUBSCRIPTION status code.</p></li>
+</ul>
+</section>
+</section>
+<section id="write-transactions">
+<h2>Write Transactions<a class="headerlink" href="#write-transactions" title="Link to this heading">#</a></h2>
+<p>In the last section we discussed the reading interactions of Attributes and Events. In this section we’ll discuss the writing of Attributes, which is the change of an Attribute value on a Cluster such as Level.</p>
+<section id="untimed-write-transaction">
+<h3>Untimed Write Transaction<a class="headerlink" href="#untimed-write-transaction" title="Link to this heading">#</a></h3>
+<section id="write-request-action">
+<h4>Write Request Action<a class="headerlink" href="#write-request-action" title="Link to this heading">#</a></h4>
+<p>Direction: Initiator -&gt; Target</p>
+<p>Similar to the Read Request Action, in this Action the Initiator provides the Target with:</p>
+<ul class="simple">
+<li><p>Write Requests: a list of one or more tuples containing Path and data.</p></li>
+<li><p>Timed Request: a flag that indicates whether this Action is part of a Timed Write Transaction.</p></li>
+<li><p>Suppress Response: a flag that indicates whether the Response Status Action should be suppressed.</p></li>
+</ul>
+<p><img alt="Untimed Write Transaction" src="primer-im-untimed-writing.png" /></p>
+</section>
+<section id="write-response-action">
+<h4>Write Response Action<a class="headerlink" href="#write-response-action" title="Link to this heading">#</a></h4>
+<p>Direction: Target -&gt; Initiator</p>
+<p>After the Target receives the Write Request Action it will finalize the transaction with a Write Response Action that carries:</p>
+<ul class="simple">
+<li><p>Write Responses: a list of paths and error codes for every Write Request sent on the Write Request Action.</p></li>
+</ul>
+</section>
+<section id="untimed-write-restrictions">
+<h4>Untimed Write Restrictions<a class="headerlink" href="#untimed-write-restrictions" title="Link to this heading">#</a></h4>
+<p>The Write Request Action may be a groupcast, but in this case the Suppress Response flag must be set. The rationale is that otherwise the network might be flooded by simultaneous responses from every member of a group.</p>
+<p>To enable this behavior, the Path used in the Write Requests list may contain Groups and alternatively they may contain wildcards, but only on the Endpoint field.</p>
+</section>
+</section>
+<section id="timed-write-transaction">
+<h3>Timed Write Transaction<a class="headerlink" href="#timed-write-transaction" title="Link to this heading">#</a></h3>
+<p>Timed write transactions add a few steps to untimed write transactions.</p>
+<section id="timed-request-action">
+<h4>Timed request action<a class="headerlink" href="#timed-request-action" title="Link to this heading">#</a></h4>
+<p>Direction: Initiator -&gt; Target</p>
+<p>A Initiator starts the Transaction sending this Action that contains:</p>
+<ul class="simple">
+<li><p>Timeout: how many milliseconds this transaction may remain open. During this period the next action sent by the Initiator will be considered valid.</p></li>
+</ul>
+<p>Once the Timed Request Action is received, the Target must acknowledge the Timed Request Action with a Status Response Action. Once the Initiator receives a Status Response Action reporting no errors, it will send a Write Request Action.</p>
+</section>
+<section id="id1">
+<h4>Write Request Action<a class="headerlink" href="#id1" title="Link to this heading">#</a></h4>
+<p>Same as the previously described Write Request Action.</p>
+</section>
+<section id="id2">
+<h4>Write Response Action<a class="headerlink" href="#id2" title="Link to this heading">#</a></h4>
+<p>Same as the previously described Write Response Action.</p>
+</section>
+<section id="timed-write-restrictions">
+<h4>Timed Write Restrictions<a class="headerlink" href="#timed-write-restrictions" title="Link to this heading">#</a></h4>
+<p>The Timed Request Action, the Write Request Action and the Write Response Action are unicast-only.</p>
+</section>
+</section>
+</section>
+<section id="invoke-transactions">
+<h2>Invoke Transactions<a class="headerlink" href="#invoke-transactions" title="Link to this heading">#</a></h2>
+<p>Invoke Transactions are used for invoking one or more Cluster Commands on a Target Node. It is similar to remote procedures calls made to a command defined in the Cluster.</p>
+<p>In a similar way of Write Transactions, Invoke Transactions support Timed and Untimed Transactions. Please refer to the Timed and Untimed Actions section for further information on Timed Transactions.</p>
+<section id="untimed-invoke-transaction">
+<h3>Untimed Invoke Transaction<a class="headerlink" href="#untimed-invoke-transaction" title="Link to this heading">#</a></h3>
+<section id="invoke-request-action">
+<h4>Invoke Request Action<a class="headerlink" href="#invoke-request-action" title="Link to this heading">#</a></h4>
+<p>Direction: Initiator -&gt; Target</p>
+<p>Similar to the Read Request Action and Write Request Action, in this Action the Initiator provides the Target with:</p>
+<ul class="simple">
+<li><p>Invoke Requests: a list of paths to Cluster Commands, as well as optional arguments to the commands, named Command Fields.</p></li>
+<li><p>Timed Request: a flag that indicates whether this action is part of a Timed Invoke Transaction.</p></li>
+<li><p>Suppress Response: a flag that indicates whether the Invoke Response Action should be suppressed.</p></li>
+<li><p>Interaction ID: an integer used for matching the Invoke Request Action to the Invoke Response Action.</p></li>
+</ul>
+<p><img alt="Untimed Invoke Transaction" src="primer-im-untimed-invoking.png" /></p>
+</section>
+<section id="invoke-response-action">
+<h4>Invoke Response Action<a class="headerlink" href="#invoke-response-action" title="Link to this heading">#</a></h4>
+<p>Direction: Target -&gt; Initiator</p>
+<p>After the Target receives the Invoke Request Action it will finalize the transaction with an Invoke Response Action that carries:</p>
+<ul class="simple">
+<li><p>Invoke Responses: a list of command responses or status for every invoke request sent.</p></li>
+<li><p>Interaction ID: a integer used for matching the Invoke Response Action to the Invoke Request Action.</p></li>
+</ul>
+</section>
+<section id="untimed-invoke-restrictions">
+<h4>Untimed Invoke Restrictions<a class="headerlink" href="#untimed-invoke-restrictions" title="Link to this heading">#</a></h4>
+<p>The Invoke Request Action may be a groupcast, but in this case the Suppress Response flag must be set. The rationale is that otherwise the network might be flooded by simultaneous responses from every member of a group.</p>
+<p>To enable this behavior the Path used in the Invoke Requests list may contain Groups and alternatively they may contain wildcards, but only on the Endpoint field. Moreover, if the Action is groupcast, this transaction terminates with no response.</p>
+</section>
+</section>
+<section id="timed-invoke-transactions">
+<h3>Timed Invoke Transactions<a class="headerlink" href="#timed-invoke-transactions" title="Link to this heading">#</a></h3>
+<p>Similar to Timed Write Transactions, Timed Invoke Transactions also start with the Timed Request Action.</p>
+<section id="id3">
+<h4>Timed Request Action<a class="headerlink" href="#id3" title="Link to this heading">#</a></h4>
+<p>Direction: Initiator -&gt; Target</p>
+<p>A Initiator starts the Transaction sending this Action that contains:</p>
+<ul class="simple">
+<li><p>Timeout: how many milliseconds this transaction may remain open. During this period the next action sent by the Initiator will be considered valid.</p></li>
+</ul>
+<p>Once the Timed Request Action is received, the Target must acknowledge the Timed Request Action with a Status Response Action. Once the Initiator receives a Status Response Action reporting no errors, it will send a Invoke Request Action.</p>
+<p><img alt="Timed Invoke Transaction" src="primer-im-timed-invoking.png" /></p>
+</section>
+<section id="id4">
+<h4>Invoke Request Action<a class="headerlink" href="#id4" title="Link to this heading">#</a></h4>
+<p>Same as the previously described Invoke Request Action.</p>
+</section>
+<section id="id5">
+<h4>Invoke Response Action<a class="headerlink" href="#id5" title="Link to this heading">#</a></h4>
+<p>Same as the previously described Invoke Response Action</p>
+</section>
+<section id="timed-invoke-restrictions">
+<h4>Timed Invoke Restrictions<a class="headerlink" href="#timed-invoke-restrictions" title="Link to this heading">#</a></h4>
+<p>All invoke commands may be called on a Timed Interaction. The Timed Request Action, the Invoke Request Action and the Invoke Response Action are Unicast-only and thus can’t be used as groupcast on Timed Invoke Transactions.</p>
+<p>The Invoke Request Action supports the usage of paths with Groups, as well as wildcards, but the Invoke Response Action does not support wildcard usage.</p>
+<p><em>This content was originally published on the <a class="reference external" href="https://developers.home.google.com/matter/primer">Google Developer Site</a></em></p>
+</section>
+</section>
+</section>
+</section>
+
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="ConnectivityTransports.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Connectivity Transports</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="Discovery.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Discovery</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#concepts">Concepts</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#initiators-and-targets">Initiators and Targets</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#groups">Groups</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#paths">Paths</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#timed-and-untimed">Timed and Untimed</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#the-intercept-attack">The Intercept Attack</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sdk-abstractions">SDK abstractions</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#read-transactions">Read Transactions</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#read-transaction">Read Transaction</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#read-request-action">Read Request Action</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#report-data-action">Report Data Action</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#status-response-action">Status Response Action</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#read-restrictions">Read Restrictions</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#subscription-transaction">Subscription Transaction</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#subscribe-request-action">Subscribe Request Action</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#subscribe-response-action">Subscribe Response Action</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#subscribe-restrictions">Subscribe Restrictions</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#write-transactions">Write Transactions</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#untimed-write-transaction">Untimed Write Transaction</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#write-request-action">Write Request Action</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#write-response-action">Write Response Action</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#untimed-write-restrictions">Untimed Write Restrictions</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#timed-write-transaction">Timed Write Transaction</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#timed-request-action">Timed request action</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Write Request Action</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Write Response Action</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#timed-write-restrictions">Timed Write Restrictions</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#invoke-transactions">Invoke Transactions</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#untimed-invoke-transaction">Untimed Invoke Transaction</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#invoke-request-action">Invoke Request Action</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#invoke-response-action">Invoke Response Action</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#untimed-invoke-restrictions">Untimed Invoke Restrictions</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#timed-invoke-transactions">Timed Invoke Transactions</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Timed Request Action</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Invoke Request Action</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">Invoke Response Action</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#timed-invoke-restrictions">Timed Invoke Restrictions</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Matter Contributors
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2024, Matter Contributors.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549"></script>
+<script defer src="../../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

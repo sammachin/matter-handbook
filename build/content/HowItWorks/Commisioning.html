@@ -1,0 +1,521 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Commissioning &#8212; matter-handbook  documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!-- 
+    this give us a css class that will be invisible only if js is disabled 
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=a3416100" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../../_static/scripts/fontawesome.js?digest=26a4bc78f4c0ddb94549"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549" />
+
+    <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'content/HowItWorks/Commisioning';</script>
+    <link rel="icon" href="../../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Attestation" href="Attestation.html" />
+    <link rel="prev" title="Discovery" href="Fabric.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/logo.png" class="logo__image only-light" alt="matter-handbook  documentation - Home"/>
+    <img src="../../_static/logo.png" class="logo__image only-dark pst-js-only" alt="matter-handbook  documentation - Home"/>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Contents</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="index.html">How It Works</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="WhatIsMatter.html">What is Matter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Roles.html">Roles</a></li>
+<li class="toctree-l2"><a class="reference internal" href="DeviceTypes.html">Supported Device Types</a></li>
+<li class="toctree-l2"><a class="reference internal" href="DataModel.html">The Device Data Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ConnectivityTransports.html">Connectivity Transports</a></li>
+<li class="toctree-l2"><a class="reference internal" href="InteractionModel.html">Interaction Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Discovery.html">Discovery</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Fabric.html">Discovery</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Commissioning</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Attestation.html">Attestation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Security.html">Security &amp; Privacy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Thread.html">Thread</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Alliance/index.html">The Connectivity Standards Alliance</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Alliance/howwework.html">How We Work</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Alliance/membership.html">Membership</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Alliance/resources.html">Resources</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Alliance/whatwedo.html">What We Do</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Specification/index.html">The Matter Specifications</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="simple">
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../SDK/index.html">SDK</a></li>
+
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Guides/index.html">Guides</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Guides/DistributedComplianceLedger.html">Distributed Compliance Ledger (DCL)</a></li>
+</ul>
+</details></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+<a href="https://github.com/project-chip/matter-handbook" target="_blank"
+   class="btn btn-sm btn-source-repository-button"
+   title="Source repository"
+   data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+
+</a>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/content/HowItWorks/Commisioning.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Commissioning</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#device-discovery">1 Device discovery</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#connect-to-device-using-pase">2 Connect to device using PASE</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#get-commissionee-information">3 Get Commissionee information</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#regulatory-config">4 Regulatory config</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#commissionee-attestation">5 Commissionee attestation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#certificate-signing-request-csr">6 Certificate Signing Request (CSR)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#add-node-operational-certificate-noc">7 Add Node Operational Certificate (NOC)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#network-provisioning">8 Network provisioning</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#operational-discovery">9 Operational discovery</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#case-session-establishment">10 CASE session establishment</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#commissioning-complete">11 Commissioning complete</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="commissioning">
+<h1>Commissioning<a class="headerlink" href="#commissioning" title="Link to this heading">#</a></h1>
+<p>Commissioning in Matter refers to the process of assigning Fabric credentials to a new device or app. The Commissioner is the device or app that does the Commissioning process. The Commissionee is the new device or app that needs to be provisioned into the Fabric.</p>
+<p>At a high-level, the commissioning flow can be broken down into multiple stages:</p>
+<p><img alt="Commissioning Flow - High Level" src="primer-commissioning.png" /></p>
+<section id="device-discovery">
+<h2>1 Device discovery<a class="headerlink" href="#device-discovery" title="Link to this heading">#</a></h2>
+<p>Prior to start of the Commissioning flow, the Commissionee must start advertising itself. The Commissionee may advertise itself using any of the three <a class="reference internal" href="#/howitworks/discovery/#commissionable-discovery"><span class="xref myst">Commissionable Discovery</span></a> methods. The Commissionee must also provide the onboarding payload.</p>
+</section>
+<section id="connect-to-device-using-pase">
+<h2>2 Connect to device using PASE<a class="headerlink" href="#connect-to-device-using-pase" title="Link to this heading">#</a></h2>
+<p>Once the Commissioner has seen the advertisement and matches up the Discriminator, the Commissioner uses the passcode from the onboarding payload to do Passcode Authenticated Session Establishment (PASE) to connect to the device. This is the method to securely establish keys that both devices will be able to use to establish communication. At this step, the Commissioner also arms a fail-safe. A fail-safe provides a way to roll back the device to its original state if commissioning doesn’t complete successfully.</p>
+</section>
+<section id="get-commissionee-information">
+<h2>3 Get Commissionee information<a class="headerlink" href="#get-commissionee-information" title="Link to this heading">#</a></h2>
+<p>The Commissioner reads all the descriptors from the Commissionee. The <code class="docutils literal notranslate"><span class="pre">DescriptorCluster</span></code> is on endpoint 0 of the device and describes all the other endpoints. Commissioner also reads the Basic Information Cluster which includes information like the Vendor ID, Product ID, Product Name and the Serial Number. At this step, the Commissioner also reads the device type of the Commissionee which helps drive the UX on the Commissioner side.</p>
+</section>
+<section id="regulatory-config">
+<h2>4 Regulatory config<a class="headerlink" href="#regulatory-config" title="Link to this heading">#</a></h2>
+<p>The Commissioner configures regulatory information on the Commissionee using the <code class="docutils literal notranslate"><span class="pre">SetRegulatoryConfig</span></code> command. Regulatory information includes information like configuring the location (indoor/outdoor/both) of the device or setting up the country code.</p>
+</section>
+<section id="commissionee-attestation">
+<h2>5 Commissionee attestation<a class="headerlink" href="#commissionee-attestation" title="Link to this heading">#</a></h2>
+<p>The goal of the Commissionee attestation procedure is to determine whether a device has been certified and is a genuine Matter device. Commissioner extracts the Device Attestation Certificate (DAC) and the Product Attestation Intermediate (PAI) certificate from the Commissionee. These certificates contain the Vendor ID, Product ID and Attestation Public Key. Once the certificates are received, the Commissioner does a challenge request that should be signed by the Attestation Private Key and uses that to establish the authenticity of the Commissionee.</p>
+</section>
+<section id="certificate-signing-request-csr">
+<h2>6 Certificate Signing Request (CSR)<a class="headerlink" href="#certificate-signing-request-csr" title="Link to this heading">#</a></h2>
+<p>The Commissioner sends a Certificate Signing Request (CSR) to the Commissionee. The Commissionee creates a unique operational key pair that will be used in a Certificate Authenticated Session Establishment (CASE) later. The Commissionee returns the resulting CSR information back to the Commissioner.</p>
+</section>
+<section id="add-node-operational-certificate-noc">
+<h2>7 Add Node Operational Certificate (NOC)<a class="headerlink" href="#add-node-operational-certificate-noc" title="Link to this heading">#</a></h2>
+<p>The Commissioner uses the CSR information received from the Commissionee and passes it to the Administrative Domain Manager (ADM) to generate a trusted NOC. The Commissioner installs the Root Certificate on the Commissionee using the <code class="docutils literal notranslate"><span class="pre">AddTrustedRootCertReq</span></code> command and then installs the Node Operational Certificate using the <code class="docutils literal notranslate"><span class="pre">AddNOC</span></code> command.</p>
+</section>
+<section id="network-provisioning">
+<h2>8 Network provisioning<a class="headerlink" href="#network-provisioning" title="Link to this heading">#</a></h2>
+<p>The Commissioner configures the operational network on the Commissionee. This step is needed for Thread or Wi-Fi devices. This step is not needed for Ethernet Devices where the device is already connected to the network. It uses <code class="docutils literal notranslate"><span class="pre">ScanNetworks</span></code>, <code class="docutils literal notranslate"><span class="pre">AddOrUpdateWifiNetwork</span></code> and <code class="docutils literal notranslate"><span class="pre">ConnectNetwork</span></code> commands.</p>
+</section>
+<section id="operational-discovery">
+<h2>9 Operational discovery<a class="headerlink" href="#operational-discovery" title="Link to this heading">#</a></h2>
+<p>Once the newly commissioned node is connected to the network, the Commissioner uses <a class="reference internal" href="#/howitworks/discovery/#operational-discovery"><span class="xref myst">Operational Discovery</span></a> to find the node on the operational network. Operational discovery is the process by which commissioned nodes are found on the operational network using DNS-SD. If the Commissionee is a Wi-Fi device, it will use mDNS to discover the device.</p>
+<p>Operational discovery helps the Commissioner and other Nodes in the network know which IP address and port the Commissionee is using.</p>
+</section>
+<section id="case-session-establishment">
+<h2>10 CASE session establishment<a class="headerlink" href="#case-session-establishment" title="Link to this heading">#</a></h2>
+<p>Once the newly commissioned node has been discovered, a CASE session is established between the Commissioner and the device. This session is initiated by the Commissioner and is responded to by the device. In this step, operational certificates are exchanged and a shared trust is established by validating they’re in the same logical fabric.</p>
+</section>
+<section id="commissioning-complete">
+<h2>11 Commissioning complete<a class="headerlink" href="#commissioning-complete" title="Link to this heading">#</a></h2>
+<p>The Commissioner uses CASE to send the <code class="docutils literal notranslate"><span class="pre">CommissioningComplete</span></code> command to the newly commissioned device. This is the last step in the commissioning process. <code class="docutils literal notranslate"><span class="pre">CommissioningComplete</span></code> also automatically disarms the fail-safe timer. Once commissioning is successfully completed, the device operates like any other Node on the operational network.</p>
+<p><em>This content was originally published on the <a class="reference external" href="https://developers.home.google.com/matter/primer">Google Developer Site</a></em></p>
+</section>
+</section>
+
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="Fabric.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Discovery</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="Attestation.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Attestation</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#device-discovery">1 Device discovery</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#connect-to-device-using-pase">2 Connect to device using PASE</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#get-commissionee-information">3 Get Commissionee information</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#regulatory-config">4 Regulatory config</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#commissionee-attestation">5 Commissionee attestation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#certificate-signing-request-csr">6 Certificate Signing Request (CSR)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#add-node-operational-certificate-noc">7 Add Node Operational Certificate (NOC)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#network-provisioning">8 Network provisioning</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#operational-discovery">9 Operational discovery</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#case-session-establishment">10 CASE session establishment</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#commissioning-complete">11 Commissioning complete</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Matter Contributors
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2024, Matter Contributors.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549"></script>
+<script defer src="../../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

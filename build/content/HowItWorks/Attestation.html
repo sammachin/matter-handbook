@@ -1,0 +1,592 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Attestation &#8212; matter-handbook  documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!-- 
+    this give us a css class that will be invisible only if js is disabled 
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=a3416100" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../../_static/scripts/fontawesome.js?digest=26a4bc78f4c0ddb94549"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549" />
+
+    <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'content/HowItWorks/Attestation';</script>
+    <link rel="icon" href="../../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Security &amp; Privacy" href="Security.html" />
+    <link rel="prev" title="Commissioning" href="Commisioning.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/logo.png" class="logo__image only-light" alt="matter-handbook  documentation - Home"/>
+    <img src="../../_static/logo.png" class="logo__image only-dark pst-js-only" alt="matter-handbook  documentation - Home"/>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Contents</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="index.html">How It Works</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="WhatIsMatter.html">What is Matter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Roles.html">Roles</a></li>
+<li class="toctree-l2"><a class="reference internal" href="DeviceTypes.html">Supported Device Types</a></li>
+<li class="toctree-l2"><a class="reference internal" href="DataModel.html">The Device Data Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ConnectivityTransports.html">Connectivity Transports</a></li>
+<li class="toctree-l2"><a class="reference internal" href="InteractionModel.html">Interaction Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Discovery.html">Discovery</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Fabric.html">Discovery</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Commisioning.html">Commissioning</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Attestation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Security.html">Security &amp; Privacy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Thread.html">Thread</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Alliance/index.html">The Connectivity Standards Alliance</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Alliance/howwework.html">How We Work</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Alliance/membership.html">Membership</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Alliance/resources.html">Resources</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Alliance/whatwedo.html">What We Do</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Specification/index.html">The Matter Specifications</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="simple">
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../SDK/index.html">SDK</a></li>
+
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Guides/index.html">Guides</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Guides/DistributedComplianceLedger.html">Distributed Compliance Ledger (DCL)</a></li>
+</ul>
+</details></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+<a href="https://github.com/project-chip/matter-handbook" target="_blank"
+   class="btn btn-sm btn-source-repository-button"
+   title="Source repository"
+   data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+
+</a>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/content/HowItWorks/Attestation.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Attestation</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#device-attestation-pki">Device Attestation PKI</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#additional-attestation-documents-messages">Additional Attestation Documents &amp; Messages</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#certification-declaration-cd">Certification Declaration (CD)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#firmware-information-optional">Firmware Information (optional)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#attestation-information">Attestation Information</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#attestation-challenge">Attestation Challenge</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#attestation-tbs-to-be-signed">Attestation TBS (to be signed)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#attestation-signature">Attestation Signature</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#attestation-procedure">Attestation Procedure</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="attestation">
+<h1>Attestation<a class="headerlink" href="#attestation" title="Link to this heading">#</a></h1>
+<p>Certified Devices are Devices that have gone through the Connectivity Standards Alliance (Alliance) Matter Certification Process.</p>
+<p>During the commissioning process, a device cryptographically proves (attests) to the Commissioner that:</p>
+<ul class="simple">
+<li><p>it is a genuine product</p></li>
+<li><p>it is a product that passed Matter compliance tests and has been thus certified by the Alliance.</p></li>
+</ul>
+<p>In order to accomplish those goals, the device carries:</p>
+<ul class="simple">
+<li><p>A Device Attestation Certificate (DAC) that conveys device’s manufacturer ID (VID) and product ID (PID). The DAC chains up to a set of trusted roots, approved by the Alliance members.</p></li>
+<li><p>A securely-stored, private key associated with the public key stored in the DAC that proves the device owns this unique certificate.</p></li>
+<li><p>Certificate declaration is a statement cryptographically signed by the Alliance that states that a tuple (VID,PID) has passed Matter compliance tests.</p></li>
+</ul>
+<p>During the development phase, the manufacturer is able test their Devices without the full Attestation process. Testers should be explicitly informed that the Device is under testing, and it hasn’t yet been certified and launched. Once a manufacturer enters a production phase, the ecosystem of the provisioner should enforce all Attestation requirements.</p>
+<p>Attestation uses a Public Key Infrastructure (PKI) that leverages Root Certificate Authorities and Intermediate Certificates, in a similar way to the widely adopted server authentication certificates used for SSL/TLS. This process is called the Device Attestation Certificate Chain.</p>
+<section id="device-attestation-pki">
+<h2>Device Attestation PKI<a class="headerlink" href="#device-attestation-pki" title="Link to this heading">#</a></h2>
+<p>The DAC is a X.509 v3 certificate. The first version of X.509 was published in 1988 by ITU-T. The X.509 v3 with Public Key Infrastructure Certificate and Certificate Revocation List (CRL) used by Matter is specified by <a class="reference external" href="https://datatracker.ietf.org/doc/html/rfc5280">RFC5280</a>. It contains:</p>
+<ul class="simple">
+<li><p>Public Key</p></li>
+<li><p>Issuer</p></li>
+<li><p>Subject</p></li>
+<li><p>Certificate Serial Number</p></li>
+<li><p>Validity, where expiration can be indeterminate</p></li>
+<li><p>Signature</p></li>
+<li><p>Vendor ID and Product ID, which are attributes of the MatterDACName in the DAC subject.</p></li>
+</ul>
+<p>The DAC is unique per device and associated with the unique attestation key pair within the product. It is issued by a Certificate Authority (CA) associated with the Device manufacturer.</p>
+<p>The DAC’s signature is validated against the Product Attestation Intermediate Certificate (PAI), which is also issued by a Product Attestation Authority (PAA). However, a vendor might choose to create one PAI per product (PID-specific), group of products, or for all its products.</p>
+<p>At the root of the chain of trust stands the PAA CA’s public key, which validates signatures from the PAI. Note that the Matter trust store is federated and the set of PAA certificates trusted by commissioners is maintained in a central trusted database (the Distributed Compliance Ledger). Entry of a PAA within the trusted set requires meeting a certificate policy managed by the Alliance.</p>
+<p><img alt="Matter Attestation Public Key Infrastructure" src="primer-attestation-pki.png" /></p>
+<p>The PAI is also a X.509 v3 certificate that includes:</p>
+<ul class="simple">
+<li><p>Public Key</p></li>
+<li><p>Issuer</p></li>
+<li><p>Subject</p></li>
+<li><p>Certificate Serial Number</p></li>
+<li><p>Validity, where expiration can be indeterminate</p></li>
+<li><p>Signature</p></li>
+<li><p>Vendor ID and Product ID (optionally), which are attributes of the MatterDACName in the DAC subject.</p></li>
+</ul>
+<p>Lastly, the PAA is the root certificate in the chain and it is self-signed. It includes:</p>
+<ul class="simple">
+<li><p>Signature</p></li>
+<li><p>Public Key</p></li>
+<li><p>Issuer</p></li>
+<li><p>Subject</p></li>
+<li><p>Certificate Serial Number</p></li>
+<li><p>Validity.</p></li>
+</ul>
+</section>
+<section id="additional-attestation-documents-messages">
+<h2>Additional Attestation Documents &amp; Messages<a class="headerlink" href="#additional-attestation-documents-messages" title="Link to this heading">#</a></h2>
+<p>The attestation process has several documents and messages. The following items are a brief overview of their function and composition. The image below aids in the understanding of their hierarchy.</p>
+<p><img alt="Attestation Document Hierarchy" src="primer-attestation-document-hierarchy.png" /></p>
+<section id="certification-declaration-cd">
+<h3>Certification Declaration (CD)<a class="headerlink" href="#certification-declaration-cd" title="Link to this heading">#</a></h3>
+<p>The CD allows the Matter product to prove its compliance with the Matter protocol. When a product has been certified by the Alliance, the product maker can request a CD from the Alliance which can then be included in the product firmware. The CD includes among other information:</p>
+<ul class="simple">
+<li><p>VID</p></li>
+<li><p>PID (one or more)</p></li>
+<li><p>Server Category ID</p></li>
+<li><p>Client Category ID</p></li>
+<li><p>Security Level</p></li>
+<li><p>Security Information</p></li>
+<li><p>Certification Type (development, provisional, or official)</p></li>
+<li><p>Signature.</p></li>
+</ul>
+</section>
+<section id="firmware-information-optional">
+<h3>Firmware Information (optional)<a class="headerlink" href="#firmware-information-optional" title="Link to this heading">#</a></h3>
+<p>The Firmware Information contains the CD Version Number and one or more digests of components in the firmware, such as the OS, filesystem, bootloader. The digests may be either a hash of the software components or a hash of the signed manifests of the software components.</p>
+<p>The vendor might as well choose to include in Firmware Information only the “hash-of-hashes” of its components, instead of an array of individual hashes.</p>
+<p>Firmware Information is an optional element in the Attestation Process and applicable when a vendor has a secure boot environment which handles the Attestation key pair.</p>
+</section>
+<section id="attestation-information">
+<h3>Attestation Information<a class="headerlink" href="#attestation-information" title="Link to this heading">#</a></h3>
+<p>Message sent from the Commissionee to the Commissioner. The Attestation Information combines a Tag-Length-Value (TLV) containing the Attestation Elements and an Attestation Signature. The Attestation Elements contain the metadata related to attestation, encoded in Matter TLV, with the following fields:</p>
+<ul class="simple">
+<li><p>Certificate Declaration</p></li>
+<li><p>Timestamp</p></li>
+<li><p>Attestation Nonce</p></li>
+<li><p>Firmware Information (optional)</p></li>
+<li><p>Vendor Specific information (optional).</p></li>
+</ul>
+</section>
+<section id="attestation-challenge">
+<h3>Attestation Challenge<a class="headerlink" href="#attestation-challenge" title="Link to this heading">#</a></h3>
+<p>Out-of-band challenge derived during Passcode Authenticated Session Establishment (PASE)/ Certificate Authenticated Session Establishment (CASE) session establishment and used to further secure the procedure and avoid replayed signatures. Comes from either CASE session, PASE session or a resumed CASE session.</p>
+</section>
+<section id="attestation-tbs-to-be-signed">
+<h3>Attestation TBS (to be signed)<a class="headerlink" href="#attestation-tbs-to-be-signed" title="Link to this heading">#</a></h3>
+<p>Message containing the Attestation Elements and Attestation Challenge.</p>
+</section>
+<section id="attestation-signature">
+<h3>Attestation Signature<a class="headerlink" href="#attestation-signature" title="Link to this heading">#</a></h3>
+<p>Signature of the Attestation TBS, signed using the Device Attestation Private Key.</p>
+</section>
+</section>
+<section id="attestation-procedure">
+<h2>Attestation Procedure<a class="headerlink" href="#attestation-procedure" title="Link to this heading">#</a></h2>
+<p>The Commissioner is responsible for validating attestation information from the Commissionee. It executes the following steps:</p>
+<ol class="arabic simple">
+<li><p>Commissioner generates a random 32 byte attestation nonce. In cryptography jargon, a nonce (number used once) is a random number generated in the cryptographic procedure and meant to be used once.</p></li>
+<li><p>Commissioner sends the nonce to the Commissionee and requests the Attestation Information.</p></li>
+<li><p>Commissionee generates the Attestation Information and signs it with the Attestation Private Key.</p></li>
+<li><p>Commissioner recovers the DAC and PAI certificate from the Commissionee, and looks up the PAA certificate from its Matter trust store.</p></li>
+<li><p>Commissioner validates the Attestation Information. These are the conditions for validation:</p>
+<ul class="simple">
+<li><p>DAC certificate chain must be validated, including revocation checks on the PAI and PAA.</p></li>
+<li><p>VID on the DAC matches the VID on the PAI.</p></li>
+<li><p>The Attestation Signature is valid.</p></li>
+<li><p>Nonce in Device Attestation Elements matches the nonce provided by the Commissioner.</p></li>
+<li><p>Certificate Declaration Signature is valid using one of the Alliance’s well-known Certification Declaration signing keys.</p></li>
+<li><p>Firmware Information (if present and supported by Commissioner) matches an entry in the Distributed Compliance Ledger.</p></li>
+<li><p>Additional VID/PID validations also take place between the Device Basic Information Cluster, Certification Declaration and the DAC.</p></li>
+</ul>
+</li>
+</ol>
+<p><em>This content was originally published on the <a class="reference external" href="https://developers.home.google.com/matter/primer">Google Developer Site</a></em></p>
+</section>
+</section>
+
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="Commisioning.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Commissioning</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="Security.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Security &amp; Privacy</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#device-attestation-pki">Device Attestation PKI</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#additional-attestation-documents-messages">Additional Attestation Documents &amp; Messages</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#certification-declaration-cd">Certification Declaration (CD)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#firmware-information-optional">Firmware Information (optional)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#attestation-information">Attestation Information</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#attestation-challenge">Attestation Challenge</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#attestation-tbs-to-be-signed">Attestation TBS (to be signed)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#attestation-signature">Attestation Signature</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#attestation-procedure">Attestation Procedure</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Matter Contributors
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2024, Matter Contributors.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549"></script>
+<script defer src="../../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
